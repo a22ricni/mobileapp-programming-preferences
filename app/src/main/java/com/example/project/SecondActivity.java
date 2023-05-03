@@ -26,6 +26,9 @@ public class SecondActivity extends AppCompatActivity {
         EditText editTextPref = findViewById(R.id.editTextPref);
         editTextPref.setText(myPreferenceRef.getString("key", "No preference found."));
 
+        TextView textView = findViewById(R.id.textView);
+        textView.setText(myPreferenceRef.getString("key", "No preference found."));
+
         Button backButton = findViewById(R.id.backButton);
 
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -39,7 +42,6 @@ public class SecondActivity extends AppCompatActivity {
     }
 
      void StoreData(){
-
         EditText editText = findViewById(R.id.editTextPref);
         myPreferenceEditor.putString("key", editText.getText().toString());
         myPreferenceEditor.apply();
