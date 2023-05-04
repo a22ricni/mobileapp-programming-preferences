@@ -20,14 +20,14 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        myPreferenceRef = getSharedPreferences("key", MODE_PRIVATE);
+        myPreferenceRef = getSharedPreferences("PreferenceString", MODE_PRIVATE);
         myPreferenceEditor = myPreferenceRef.edit();
 
         EditText editTextPref = findViewById(R.id.editTextPref);
-        editTextPref.setText(myPreferenceRef.getString("key", "No preference found."));
+        editTextPref.setText(myPreferenceRef.getString("PreferenceString", "No preference found."));
 
         TextView textView = findViewById(R.id.textView);
-        textView.setText(myPreferenceRef.getString("key", "No preference found."));
+        textView.setText(myPreferenceRef.getString("PreferenceString", "No preference found."));
 
         Button backButton = findViewById(R.id.backButton);
 
@@ -43,7 +43,7 @@ public class SecondActivity extends AppCompatActivity {
 
      void StoreData(){
         EditText editText = findViewById(R.id.editTextPref);
-        myPreferenceEditor.putString("key", editText.getText().toString());
+        myPreferenceEditor.putString("PreferenceString", editText.getText().toString());
         myPreferenceEditor.apply();
 
     }

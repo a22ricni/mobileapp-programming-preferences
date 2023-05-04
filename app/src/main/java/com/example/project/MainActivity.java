@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        myPreferenceRef = getSharedPreferences("key", MODE_PRIVATE);
+        myPreferenceRef = getSharedPreferences("PreferenceString", MODE_PRIVATE);
         myPreferenceEditor = myPreferenceRef.edit();
 
 
         TextView prefTextRef=(TextView)findViewById(R.id.prefText);
-        prefTextRef.setText(myPreferenceRef.getString("key", "No preference found."));
+        prefTextRef.setText(myPreferenceRef.getString("PreferenceString", "No preference found."));
 
 
         Button submitButton = findViewById(R.id.submitButton);
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         TextView prefTextData = findViewById(R.id.prefText);
-        prefTextData.setText(myPreferenceRef.getString("key", "Name"));
+        prefTextData.setText(myPreferenceRef.getString("PreferenceString", "Name"));
     }
 
 }
